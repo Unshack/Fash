@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css");
+
 * {
   margin: 0px;
   padding: 0px;
@@ -37,7 +41,6 @@ body {
 
 .headerWrapper {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 10px;
 }
 
 .headerWrapper .top-strip {
@@ -230,6 +233,60 @@ nav .navPart2 {
   flex: 0 0 80%;
 }
 
+nav .navPart1 .catWrapper {
+  position: relative;
+}
+
+nav .navPart1 .catWrapper .sidebarNav {
+  width: 100%;
+  height: 0px;
+  opacity: 0;
+  background: #fff;
+  position: absolute;
+  top: 136%;
+  left: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0px;
+  transition: all 0.2s;
+  visibility: hidden;
+  z-index: 100;
+}
+
+nav .navPart1 .catWrapper .sidebarNav.open {
+  height: auto;
+  opacity: 1;
+  visibility: inherit;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li {
+  width: 100%;
+  list-style: none;
+  padding: 0px 15px;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li button {
+  color: #000;
+  width: 100%;
+  justify-content: flex-start;
+  text-transform: capitalize !important;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li button:hover {
+  background: transparent !important;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li a button {
+  opacity: 1;
+  visibility: inherit;
+  top: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
 nav .allCatTab {
   background: #2bbef9;
   padding: 10px 15px !important;
@@ -260,6 +317,10 @@ nav .navPart2 ul {
   margin-bottom: 0px;
 }
 
+nav .navPart2 ul li {
+  padding-bottom: 20px;
+}
+
 nav .navPart2 ul li a {
   font-size: 15px;
   font-weight: 600;
@@ -268,7 +329,7 @@ nav .navPart2 ul li a {
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  padding: 8px 13px;
+  padding: 10px 15px;
   transition: all 0.2s ease-in-out;
   border-radius: 25px;
 }
@@ -280,4 +341,68 @@ nav .navPart2 ul li a svg {
 nav .navPart2 ul li a:hover {
   background: #f0faff;
   color: #2bbef9;
+}
+
+nav .navPart2 ul li {
+  position: relative;
+}
+
+nav .navPart2 ul li .submenu {
+  position: absolute;
+  top: 150%;
+  left: 0px;
+  min-width: 200px;
+  background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease-in-out;
+  z-index: 100;
+}
+
+nav .navPart2 ul li .submenu a {
+  display: block;
+  width: 100%;
+  border-radius: 0px !important;
+}
+
+nav .navPart2 ul li:hover .submenu {
+  opacity: 1;
+  visibility: inherit;
+  top: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.homeBannerSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.homeBannerSection * {
+  outline: none !important;
+}
+
+.homeBannerSection .slick-arrow {
+  position: absolute;
+  top: 45%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.5);
+  width: 40px !important;
+  height: 40px !important;
+  background: #2525255e;
+  border-radius: 100%;
+}
+
+.homeBannerSection .slick-arrow.slick-next {
+  right: 25px !important;
+}
+.homeBannerSection .slick-arrow.slick-prev {
+  left: 25px !important;
 }
