@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa6";
 import { useState } from "react";
+import { FaAngleRight } from "react-icons/fa6";
 
 const Navigation = () => {
   const [isOpenSidebarVal, setIsOpenSidebarVal] = useState(false);
@@ -34,13 +35,51 @@ const Navigation = () => {
                 <ul>
                   <li>
                     <Link to="/">
-                      <Button>Men </Button>
+                      <Button>
+                        Men <FaAngleRight className="ml-auto" />
+                      </Button>
                     </Link>
+                    <div className="submenu">
+                      <Link to="/">
+                        <Button>Clothing </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Footwear </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Watches </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Shorts </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Accessories </Button>
+                      </Link>
+                    </div>
                   </li>
                   <li>
                     <Link to="/">
-                      <Button>Women </Button>
+                      <Button>
+                        Women <FaAngleRight className="ml-auto" />
+                      </Button>
                     </Link>
+                    <div className="submenu">
+                      <Link to="/">
+                        <Button>Clothing </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Footwear </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Watches </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Shorts </Button>
+                      </Link>
+                      <Link to="/">
+                        <Button>Accessories </Button>
+                      </Link>
+                    </div>
                   </li>
                   <li>
                     <Link to="/">
