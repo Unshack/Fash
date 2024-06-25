@@ -13,6 +13,7 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
 }
 
 .bg-blue {
@@ -426,6 +427,7 @@ nav .navPart2 ul li:hover .submenu {
 .homeBannerSection {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .homeBannerSection * {
@@ -439,19 +441,51 @@ nav .navPart2 ul li:hover .submenu {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(0, 0, 0, 0.5);
   width: 40px !important;
   height: 40px !important;
-  background: #2525255e;
+  background: #fff;
   border-radius: 100%;
+  font-family: FontAwesome !important;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgb(0, 0, 0 / 12%), 0 1px 2px rgb(0, 0, 0 / 24%) !important;
+}
+
+.homeBannerSection .slick-arrow:hover {
+  background: #f7f7f7;
+  transition: all 0.4s ease-in-out;
 }
 
 .homeBannerSection .slick-arrow.slick-next {
-  right: 25px !important;
+  right: 35px !important;
 }
 .homeBannerSection .slick-arrow.slick-prev {
-  left: 25px !important;
+  left: 35px !important;
 }
+
+.slick-prev::before,
+.slick-next::before {
+  color: #000 !important;
+  font-family: FontAwesome !important;
+  opacity: 0.8;
+}
+
+.slick-next::before {
+  content: "\f105" !important;
+}
+
+.slick-prev::before {
+  content: "\f104" !important;
+}
+
+/* .homeBannerSection .slick-arrow.slick-next::before {
+  font-family: FontAwesome !important;
+  color: #fff;
+}
+
+.homeBannerSection .slick-arrow.slick-prev::before {
+  font: FontAwesome !important;
+  color: #fff;
+} */
 
 .homeProducts {
   padding: 25px 0px;
@@ -464,9 +498,10 @@ nav .navPart2 ul li:hover .submenu {
   overflow: hidden;
 }
 
-.productRow .hd {
+.hd {
   font-size: 20px;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .viewAllBtn {
@@ -588,6 +623,133 @@ nav .navPart2 ul li:hover .submenu {
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
+.product_row .swiper-button-next,
+.product_row .swiper-button-prev {
+  position: absolute;
+  top: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  color: #7e7e7e;
+  background: #fff;
+  border-radius: 100%;
+  border: #000;
+  font-family: FontAwesome !important;
+  box-shadow: 0 1px 3px rgb(0, 0, 0 / 12%), 0 1px 2px rgb(0, 0, 0 / 24%) !important;
+}
+
+.swiper-button-next {
+  right: 15px !important;
+}
+.swiper-button-prev {
+  left: 15px !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-family: FontAwesome !important;
+  opacity: 0.8;
+}
+
+.swiper-button-next::after {
+  content: "\f105" !important;
+}
+
+.swiper-button-prev::after {
+  content: "\f104" !important;
+}
+
 .swiper {
-  padding-right: 1px !important;
+  padding-right: 2px !important;
+}
+
+.badge-primary {
+  background: #2bbef9 !important;
+}
+
+.homeCat {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 35px 10px;
+}
+
+.homeCat * {
+  outline: none !important;
+}
+
+.homeCat .slick-slide {
+  padding: 2px;
+  overflow: inherit !important;
+}
+
+.homeCat .slick-slider .item {
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  background: #cecece41;
+  border-radius: 10px;
+}
+
+.homeCat .slick-slide .item img {
+  width: 85px;
+  height: 85px;
+}
+
+.homeCat .slick-arrow::before {
+  position: absolute;
+  top: -45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  background: #cecece41;
+  border-radius: 100%;
+  font-family: FontAwesome !important;
+  box-shadow: 0 1px 3px rgb(0, 0, 0 / 12%), 0 1px 2px rgb(0, 0, 0 / 24%) !important;
+}
+
+.homeCat .slick-arrow.slick-next::before,
+.homeCat .slick-arrow.slick-prev::before {
+  font-size: 28px !important;
+}
+
+.homeCat .slick-arrow.slick-next,
+.homeCat .slick-arrow.slick-prev {
+  top: -30px !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.homeCat .slick-arrow.slick-prev {
+  right: 68px !important;
+  left: inherit !important;
+}
+
+.homeCat .slick-arrow.slick-next {
+  right: 10px !important;
+}
+
+.productRow2 {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.productRow2 .productItem {
+  width: 24%;
+  overflow: hidden;
+  border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.bannerSec {
+  gap: 15px;
+}
+
+.sticky {
+  position: sticky;
+  top: 10px;
+  z-index: 100;
 }
