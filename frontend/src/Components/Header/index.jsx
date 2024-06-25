@@ -17,8 +17,9 @@ const Header = () => {
         <div className="top-strip bg-blue">
           <div className="container">
             <p className="mb-0 mt-0 text-center">
-              Due to the <b>COVID 19</b> epidemic, orders may be processed with
-              a slight delay
+              Enjoy free shipping on all domestic orders <b>over $100</b> and
+              get your items delivered right to your doorstep without any
+              additional charges!
             </p>
           </div>
         </div>
