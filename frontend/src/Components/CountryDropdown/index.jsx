@@ -52,8 +52,8 @@ const CountryDropdown = () => {
 
   return (
     <>
-      <Button className="countryDrop" onClick={() => setIsOpenModal(true)}>
-        <div className="info d-flex flex-column">
+      <Button className="countryDrop mr-2" onClick={() => setIsOpenModal(true)}>
+        <div className="info d-flex flex-column ">
           <span className="label">Your Location</span>
           <span className="name">
             {context.selectedCountry !== ""
@@ -77,7 +77,11 @@ const CountryDropdown = () => {
       >
         <h4 className="mb-0">Choose your Delivery Location</h4>
         <p>Enter your address and we will specify the offer for your area.</p>
-        <Button className="close_" onClick={() => setIsOpenModal(false)}>
+        <Button
+          variant="contained"
+          className="close_"
+          onClick={() => setIsOpenModal(false)}
+        >
           <MdClose />
         </Button>
 

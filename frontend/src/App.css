@@ -31,6 +31,51 @@ body {
   }
 }
 
+.badge {
+  display: inline-block;
+  padding: 7px 10px;
+}
+
+.bg-success {
+  background-color: #e5f8ed !important;
+  color: #16b858 !important;
+}
+
+button {
+  text-transform: capitalize !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.btn-blue {
+  background: #000000 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-transform: capitalize !important;
+}
+
+.btn-big {
+  font-size: 17px !important;
+  padding: 8px 30px !important;
+  min-width: auto !important;
+}
+
+.btn-round {
+  border-radius: 50px !important;
+}
+
+.btn-sml {
+  font-size: 12px !important;
+  color: #000;
+  text-transform: capitalize !important;
+}
+
+.btn-sml svg {
+  font-size: 20px;
+}
+
 .cursor {
   cursor: pointer;
 }
@@ -53,8 +98,8 @@ body {
 ::-webkit-scrollbar {
   background: transparent !important;
 }
-/* 
-.headerWrapper {
+
+/* .headerWrapper {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 } */
 
@@ -80,13 +125,17 @@ body {
 }
 
 .headerWrapper .header .part2 .countryDrop {
-  width: 150px;
+  width: 180px;
   height: 60px;
   min-width: 150px;
   color: #000 !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 7px !important;
   padding: 10px 12px !important;
+}
+
+.headerWrapper .header .part2 .countryDrop:hover {
+  box-shadow: 2px 2px rgba(175, 175, 175, 0.1) !important;
 }
 
 .headerWrapper .header .part2 .countryDrop {
@@ -120,7 +169,7 @@ body {
   padding: 5px;
   position: relative;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .headerSearch input {
@@ -224,8 +273,8 @@ header .part3 .circle svg {
   background: #e2e2e2 !important;
 }
 
-.locationModal .close_ {
-  position: absolute;
+.close_ {
+  position: absolute !important;
   top: 10px;
   right: 10px;
   color: #000 !important;
@@ -235,7 +284,7 @@ header .part3 .circle svg {
   border-radius: 50% !important;
 }
 
-.locationModal .close_ svg {
+.close_ svg {
   font-size: 22px;
 }
 
@@ -546,16 +595,24 @@ nav .navPart2 ul li:hover .submenu {
   font-weight: 600;
 }
 
-.productItem .info .oldPrice {
+.info .oldPrice {
   font-size: 16px;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.2);
   text-decoration: line-through;
 }
 
-.productItem .info .netPrice {
-  font-size: 16px;
+.info .oldPrice .lg {
+  font-size: 20px;
+}
+
+.info .netPrice {
+  font-size: 20px;
   font-weight: bold;
+}
+
+.info .netPrice .lg {
+  font-size: 20px;
 }
 
 .productItem .actions {
@@ -754,6 +811,7 @@ nav .navPart2 ul li:hover .submenu {
   position: sticky;
   top: 10px;
   z-index: 100;
+  margin-bottom: 46px;
 }
 
 .newsLetterSection {
@@ -898,4 +956,105 @@ footer .copyright ul li a {
 footer .copyright ul li a svg {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.productModal .MuiPaper-elevation {
+  padding: 25px;
+  position: relative;
+  max-width: 900px !important;
+  width: 900px !important;
+}
+
+.productModal h4 {
+  font-size: 22px !important;
+}
+
+.productZoom {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.productZoom .badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.zoomSliderBig {
+  width: 100% !important;
+}
+
+.zoomSlider {
+  padding-top: 30px;
+}
+
+.zoomSlider .slick-slide {
+  padding-right: 20px !important;
+}
+
+.zoomSlider * {
+  outline: none !important;
+}
+
+.zoomSlider .item {
+  border: 2px solid transparent !important;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.zoomSlider .slick-current .item {
+  border: 2px solid #adb6b2 !important;
+}
+
+.zoomSlider .slick-arrow {
+  top: 55% !important;
+  zoom: 80% !important;
+}
+
+.zoomSlider .slick-arrow.slick-next {
+  right: -2% !important;
+}
+
+.zoomSlider .slick-arrow.slick-prev {
+  right: -5% !important;
+}
+
+.quantityDrop {
+  width: 150px;
+  gap: 10px;
+}
+
+.quantityDrop button {
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: #edeef5 !important;
+}
+
+.quantityDrop button svg {
+  color: #000000ce !important;
+}
+
+.quantityDrop input {
+  width: 30px;
+  border: 0px;
+  background: transparent;
+  outline: none !important;
+  text-align: center;
+}
+
+.productModal .actions button {
+  color: #000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  font-size: 10px !important;
+}
+
+.productModal .actions button svg {
+  font-size: 15px !important;
 }

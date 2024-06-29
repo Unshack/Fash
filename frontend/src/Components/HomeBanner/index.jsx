@@ -12,7 +12,7 @@ const HomeBanner = () => {
   };
 
   return (
-    <div className="container mt-2">
+    <div className="container">
       <div className="homeBannerSection">
         <Slider {...settings}>
           <div className="item">
