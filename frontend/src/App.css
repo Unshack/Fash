@@ -498,7 +498,7 @@ nav .navPart2 ul li:hover .submenu {
   border-radius: 100%;
   font-family: FontAwesome !important;
   font-weight: bold;
-  box-shadow: 0 1px 3px rgb(0, 0, 0 / 12%), 0 1px 2px rgb(0, 0, 0 / 24%) !important;
+  box-shadow: 2px 2px rgba(175, 175, 175, 0.1) !important;
 }
 
 .homeBannerSection .slick-arrow:hover {
@@ -686,28 +686,29 @@ nav .navPart2 ul li:hover .submenu {
 .product_row .swiper-button-prev {
   position: absolute;
   top: 45%;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px !important;
   height: 40px !important;
-  color: #7e7e7e;
   background: #fff;
   border-radius: 100%;
-  border: #000;
   font-family: FontAwesome !important;
+  font-weight: bold;
   box-shadow: 0 1px 3px rgb(0, 0, 0 / 12%), 0 1px 2px rgb(0, 0, 0 / 24%) !important;
 }
 
 .swiper-button-next {
-  right: 15px !important;
+  right: 10px !important;
 }
 .swiper-button-prev {
-  left: 15px !important;
+  left: 10px !important;
 }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
+  color: #000 !important;
   font-family: FontAwesome !important;
   opacity: 0.8;
 }
@@ -718,6 +719,16 @@ nav .navPart2 ul li:hover .submenu {
 
 .swiper-button-prev::after {
   content: "\f104" !important;
+}
+
+.product_row .swiper-button-prev:after {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.product_row .swiper-button-next:after {
+  font-size: 30px;
+  font-weight: 400;
 }
 
 .swiper {
@@ -765,10 +776,10 @@ nav .navPart2 ul li:hover .submenu {
   justify-content: center;
   width: 40px !important;
   height: 40px !important;
-  background: #cecece41;
   border-radius: 100%;
   font-family: FontAwesome !important;
-  box-shadow: 0 1px 3px rgb(0, 0, 0 / 12%), 0 1px 2px rgb(0, 0, 0 / 24%) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: -1px 1px rgba(175, 175, 175, 0.1) !important;
 }
 
 .homeCat .slick-arrow.slick-next::before,
@@ -988,6 +999,22 @@ footer .copyright ul li a svg {
   width: 100% !important;
 }
 
+.zoomSlider .swiper-button-next::after,
+.zoomSlider .swiper-button-prev::after {
+  position: absolute;
+  font-size: 35px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  background: #ffffff;
+  border-radius: 100%;
+  font-family: FontAwesome !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .zoomSlider {
   padding-top: 30px;
 }
@@ -1024,6 +1051,22 @@ footer .copyright ul li a svg {
   right: -5% !important;
 }
 
+.zoomSlider .item_active {
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.zoomSlider .swiper-button-prev {
+  width: 30px !important;
+  height: 30px !important;
+  top: 60% !important;
+}
+
+.zoomSlider .swiper-button-next {
+  width: 30px !important;
+  height: 30px !important;
+  top: 60% !important;
+}
+
 .quantityDrop {
   width: 150px;
   gap: 10px;
@@ -1035,6 +1078,7 @@ footer .copyright ul li a svg {
   height: 40px !important;
   border-radius: 50% !important;
   background: #edeef5 !important;
+  color: #000 !important;
 }
 
 .quantityDrop button svg {

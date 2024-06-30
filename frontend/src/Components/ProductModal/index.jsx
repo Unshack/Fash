@@ -1,6 +1,6 @@
 import { Button, Dialog } from "@mui/material";
 import Rating from "@mui/material/Rating";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { MdClose } from "react-icons/md";
 import InnerImageZoom from "react-inner-image-zoom";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
@@ -9,42 +9,26 @@ import QuantityBox from "../QuantityBox";
 import { CiHeart } from "react-icons/ci";
 import { HiOutlineArrowsUpDown } from "react-icons/hi2";
 import { MyContext } from "../../App";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
-const ProductModal = () => {
+const ProductModal = (props) => {
+  const [slideIndex, setSlideIndex] = useState(0);
   const zoomSliderBig = useRef();
   const zoomSlider = useRef();
 
   const context = useContext(MyContext);
 
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    fade: false,
-    arrows: true,
-  };
-
-  var settings2 = {
-    dots: false,
-    infinite: false,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: false,
-    arrows: false,
-  };
-
   const goto = (index) => {
-    zoomSlider.current.slickGoTo(index);
-    zoomSliderBig.current.slickGoTo(index);
+    setSlideIndex(index);
+    zoomSlider.current.swiper.slideTo(index);
+    zoomSliderBig.current.swiper.slideTo(index);
   };
 
   return (
     <>
       <Dialog
-        open={true}
+        open={context.isOpenProductModal}
         onClose={() => context.setIsOpenProductModal(false)}
         className="productModal"
       >
@@ -79,87 +63,118 @@ const ProductModal = () => {
           <div className="col-md-5">
             <div className="productZoom position-relative">
               <div className="badge badge-primary">23%</div>
-              <Slider
-                {...settings2}
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={0}
+                navigation={false}
+                slidesPerGroup={1}
+                modules={[Navigation]}
                 className="zoomSliderBig"
                 ref={zoomSliderBig}
               >
-                <div className="item">
-                  <InnerImageZoom
-                    zoomType="hover"
-                    zoomScale={1}
-                    src={`https://www.redmolotov.com/image/cache/catalog/designs/russian-warship-go-f-yourself-tshirt_design-1000x1000.jpg`}
-                  />
-                </div>
-                <div className="item">
-                  <InnerImageZoom
-                    zoomType="hover"
-                    zoomScale={1}
-                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_bottlegreentshirt.jpg`}
-                  />
-                </div>
-                <div className="item">
-                  <InnerImageZoom
-                    zoomType="hover"
-                    zoomScale={1}
-                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_redtshirt.jpg`}
-                  />
-                </div>
-                <div className="item">
-                  <InnerImageZoom
-                    zoomType="hover"
-                    zoomScale={1}
-                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_whitetshirt.jpg`}
-                  />
-                </div>
-
-                <div className="item">
-                  <InnerImageZoom
-                    zoomType="hover"
-                    zoomScale={1}
-                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_navybluetshirt.jpg`}
-                  />
-                </div>
-              </Slider>
+                <SwiperSlide>
+                  <div className="item">
+                    <InnerImageZoom
+                      zoomType="hover"
+                      zoomScale={1}
+                      src={`https://www.redmolotov.com/image/cache/catalog/designs/russian-warship-go-f-yourself-tshirt_design-1000x1000.jpg`}
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="item">
+                    <InnerImageZoom
+                      zoomType="hover"
+                      zoomScale={1}
+                      src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_bottlegreentshirt.jpg`}
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="item">
+                    <InnerImageZoom
+                      zoomType="hover"
+                      zoomScale={1}
+                      src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_redtshirt.jpg`}
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="item">
+                    <InnerImageZoom
+                      zoomType="hover"
+                      zoomScale={1}
+                      src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_whitetshirt.jpg`}
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="item">
+                    <InnerImageZoom
+                      zoomType="hover"
+                      zoomScale={1}
+                      src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_navybluetshirt.jpg`}
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
 
-            <Slider {...settings} className="zoomSlider" ref={zoomSlider}>
-              <div className="item">
-                <img
-                  className="w-100"
-                  src={`https://www.redmolotov.com/image/cache/catalog/designs/russian-warship-go-f-yourself-tshirt_design-1000x1000.jpg`}
-                  onClick={() => goto(0)}
-                />
-              </div>
-              <div className="item">
-                <img
-                  className="w-100"
-                  src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_bottlegreentshirt.jpg`}
-                  onClick={() => goto(1)}
-                />
-              </div>
-              <div className="item">
-                <img
-                  className="w-100"
-                  src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_redtshirt.jpg`}
-                  onClick={() => goto(2)}
-                />
-              </div>
-              <div className="item">
-                <img
-                  className="w-100"
-                  src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_whitetshirt.jpg`}
-                  onClick={() => goto(3)}
-                />
-              </div>
-              <div className="item">
-                <img
-                  className="w-100"
-                  src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_navybluetshirt.jpg`}
-                  onClick={() => goto(4)}
-                />
-              </div>
-            </Slider>
+            <Swiper
+              slidesPerView={4}
+              spaceBetween={0}
+              navigation={true}
+              slidesPerGroup={1}
+              modules={[Navigation]}
+              className="zoomSlider"
+              ref={zoomSlider}
+            >
+              <SwiperSlide>
+                <div className={`item ${slideIndex === 0 && "item_active"}`}>
+                  <img
+                    className="w-100"
+                    src={`https://www.redmolotov.com/image/cache/catalog/designs/russian-warship-go-f-yourself-tshirt_design-1000x1000.jpg`}
+                    onClick={() => goto(0)}
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className={`item ${slideIndex === 1 && "item_active"}`}>
+                  <img
+                    className="w-100"
+                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_bottlegreentshirt.jpg`}
+                    onClick={() => goto(1)}
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className={`item ${slideIndex === 2 && "item_active"}`}>
+                  <img
+                    className="w-100"
+                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_redtshirt.jpg`}
+                    onClick={() => goto(2)}
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className={`item ${slideIndex === 3 && "item_active"}`}>
+                  <img
+                    className="w-100"
+                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_whitetshirt.jpg`}
+                    onClick={() => goto(3)}
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className={`item ${slideIndex === 4 && "item_active"}`}>
+                  <img
+                    className="w-100"
+                    src={`https://www.redmolotov.com/image/catalog/designslarge/r/russian-warship-go-f-yourself-tshirt_navybluetshirt.jpg`}
+                    onClick={() => goto(4)}
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
 
           <div className="col-md-7">
