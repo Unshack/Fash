@@ -4,7 +4,7 @@ import { FaRegEye } from "react-icons/fa6";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { MyContext } from "../../App";
 
-const ProductItem = () => {
+const ProductItem = (props) => {
   const context = useContext(MyContext);
 
   const viewProductDetails = (id) => {
@@ -13,14 +13,12 @@ const ProductItem = () => {
 
   return (
     <>
-      <div className="item productItem">
+      <div className={`item productItem ${props.itemView}`}>
         <div className="imgWrapper">
           <img
-            src="https://threadheads.com/cdn/shop/files/Black-Front_d5e5bc9e-af32-49ef-9a87-3598554bf6d7.jpg?v=1717137162&width=300"
+            src="https://www.redmolotov.com/image/cache/catalog/designs/your-boss-might-go-to-space-tshirt_design-400x400.jpg"
             className="w-100"
           />
-
-          <span className="badge badge-primary">30%</span>
           <div className="actions">
             <Button onClick={() => viewProductDetails(1)}>
               <FaRegEye />
@@ -29,6 +27,7 @@ const ProductItem = () => {
               <IoMdHeartEmpty />
             </Button>
           </div>
+          <span className="badge badge-primary">30%</span>
         </div>
 
         <div className="info">
